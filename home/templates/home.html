@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Our Bikes</h1>
+
+<ul class="bike-list">
+    {% for bike in bikes %}
+    <li class="bike-list-item">
+        <div class="image">
+            <img src="{{ bike.image.url }}" />
+        </div>
+        <div class="name">
+            <a href="{{ bike.get_absolute_url }}">{{ bike.name }}</a>
+        </div>
+        <div class="rent">
+            ${{ bike.daily_rent }} / day
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
