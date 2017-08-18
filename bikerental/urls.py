@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 
 from home.views import HomeView, BikeDetailView, NewBookingView
+from home import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,5 +27,6 @@ urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^bike/(?P<pk>\d+)/$', BikeDetailView.as_view(), name='bike-details'),
     url(r'^booking/(?P<bike_pk>\d+)/$', NewBookingView.as_view(), name='new-booking'),
+    url(r'^download/', views.download_file, name='download'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

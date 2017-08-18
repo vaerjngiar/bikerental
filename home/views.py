@@ -5,6 +5,21 @@ from django.views.generic import DetailView
 from home.models import Booking
 from home.models import Bike
 
+import os
+import mimetypes
+from django.http import StreamingHttpResponse
+from wsgiref.util import FileWrapper
+
+
+def download_file(request):
+   the_file = 'static/file/name.jpg'
+   filename = os.path.basename(the_file)
+   chunk_size = 8192
+   response = StreamingHttpResponse(FileWrapper(open(the_file, 'rb'), chunk_size), content_type=mimetypes.guess_type(the_file)[0])
+   response['Content-Length'] = os.path.getsize(the_file)
+   response['Content-Disposition'] = "attachment; filename=%s" % filename
+   return response
+
 
 class HomeView(TemplateView):
     template_name = 'home.html'

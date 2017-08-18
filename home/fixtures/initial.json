@@ -1,0 +1,60 @@
+[
+{
+  "model": "home.bike",
+  "pk": 1,
+  "fields": {
+    "name": "Bike #1",
+    "image": "bike_images/sm1.jpg",
+    "description": "Our bike# 1 is greatest choice!!",
+    "daily_rent": 3,
+    "is_available": true
+  }
+},
+{
+  "model": "home.bike",
+  "pk": 2,
+  "fields": {
+    "name": "Bike #2",
+    "image": "bike_images/sm3.jpg",
+    "description": "This is a very smart choice. Great bike#2",
+    "daily_rent": 4,
+    "is_available": true
+  }
+},
+{
+  "model": "home.bike",
+  "pk": 3,
+  "fields": {
+    "name": "Bike #3",
+    "image": "bike_images/sm4.jpg",
+    "description": "Real cool. This is a very smart choice. Great bike#3",
+    "daily_rent": 5,
+    "is_available": true
+  }
+},
+{
+  "model": "home.bike",
+  "pk": 4,
+  "fields": {
+    "name": "Bike #4",
+    "image": "bike_images/smal.jpg",
+    "description": "Old fashion. Good choice",
+    "daily_rent": 2,
+    "is_available": true
+  }
+},
+{
+  "model": "home.booking",
+  "pk": 1,
+  "fields": {
+    "bike": 4,
+    "customer_name": "Jhon Smith",
+    "customer_email": "smith@mail.ru",
+    "customer_phone_number": "+373 6911 11 11",
+    "booking_start_date": "2017-07-27",
+    "booking_end_date": "2017-07-29",
+    "booking_message": "Want it.",
+    "is_approved": true
+  }
+}
+]
